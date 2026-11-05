@@ -1,0 +1,47 @@
+{{- define "main" }}
+
+<section class="home-hero">
+  <h1 class="hero-title">Dahlia Lab</h1>
+  <p class="hero-sub">한국어 IT 제품 블로그</p>
+  <p class="hero-desc">모니터부터 카메라까지, 제대로 된 비교와 분석</p>
+</section>
+
+<section class="cat-section">
+  <h2 class="section-heading">카테고리</h2>
+  <div class="cat-grid">
+    {{- range .Site.Sections }}
+    <a href="{{ .Permalink }}" class="cat-card cat-{{ .File.ContentBaseName }}">
+      <span class="cat-abbr">{{ upper (substr .File.ContentBaseName 0 2) }}</span>
+      <span class="cat-name">{{ .Title }}</span>
+      <span class="cat-items">{{ .Params.items }}</span>
+      {{- $count := len .RegularPages }}
+      <span class="cat-count">{{ if gt $count 0 }}{{ $count }}편{{ else }}준비 중{{ end }}</span>
+    </a>
+    {{- end }}
+  </div>
+</section>
+
+{{- $pages := .Site.RegularPages }}
+{{- if $pages }}
+<section class="recent-section">
+  <h2 class="section-heading">최신 글</h2>
+  <div class="post-grid">
+    {{- range first 6 $pages.ByLastmod.Reverse }}
+    <a href="{{ .Permalink }}" class="post-card">
+      <div class="post-card-inner">
+        {{- with index .Params.categories 0 }}
+        <span class="post-badge">{{ . }}</span>
+        {{- end }}
+        <h3 class="post-card-title">{{ .Title }}</h3>
+        {{- with .Description }}
+        <p class="post-card-desc">{{ . }}</p>
+        {{- end }}
+        <time class="post-card-date">{{ .Date.Format "2006.01.02" }}</time>
+      </div>
+    </a>
+    {{- end }}
+  </div>
+</section>
+{{- end }}
+
+{{- end }}

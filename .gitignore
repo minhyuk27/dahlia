@@ -1,0 +1,12 @@
+.env
+.env.*
+!.env.example
+public/
+resources/
+.hugo_build.lock
+__pycache__/
+*.py[cod]
+data/*.db
+data/*.sqlite*
+logs/
+*.log

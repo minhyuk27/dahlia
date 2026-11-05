@@ -1,0 +1,82 @@
+baseURL = "https://dahlialab.duckdns.org/"
+languageCode = "ko-KR"
+title = "Dahlia Lab"
+theme = "PaperMod"
+defaultContentLanguage = "ko"
+enableRobotsTXT = true
+buildDrafts = false
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    noClasses = false
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[params]
+  env = "production"
+  description = "한국어 IT 제품 블로그 — 제대로 된 비교와 분석"
+  author = "Dahlia Lab"
+  gcSite = "dahlialab"
+  defaultTheme = "auto"
+  ShowReadingTime = false
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = false
+  ShowWordCount = false
+
+  [params.cover]
+    linkFullImages = true
+    responsiveImages = false
+  ShowRssButtonInSectionTermList = true
+  disableScrollToTop = false
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[[menus.main]]
+  name = "Computer"
+  url = "/computer/"
+  weight = 1
+
+[[menus.main]]
+  name = "Display"
+  url = "/display/"
+  weight = 2
+
+[[menus.main]]
+  name = "Mobile"
+  url = "/mobile/"
+  weight = 3
+
+[[menus.main]]
+  name = "Audio"
+  url = "/audio/"
+  weight = 4
+
+[[menus.main]]
+  name = "Gadget"
+  url = "/gadget/"
+  weight = 5
+
+[[menus.main]]
+  name = "Play"
+  url = "/play/"
+  weight = 6
+
+[[menus.main]]
+  name = "Frame"
+  url = "/frame/"
+  weight = 7
+
+[[menus.main]]
+  name = "검색"
+  url = "/search/"
+  weight = 10
