@@ -8,6 +8,7 @@ Dahlia는 Hugo SSG(Static Site Generator)를 기반으로 고성능 반응형 IT
 
 - **목적**: 무거운 CMS(WordPress 등)의 서버 유지비와 보안 취약점을 탈피하고, 초저지연 로딩 속도(Google Core Web Vitals 95+ 달성)와 고도화된 배포 자동화를 지원하는 지속 가능한 정적 미디어 인프라 구축
 - **대상 도메인**: IT 디바이스(Display, Mobile, Audio, Computer) 심층 비교 및 리뷰
+- **개발 형태**: 1인 단독 아키텍처 설계 및 인프라 구축 (기여도 100%)
 - **핵심 특징**:
   - **초고속 정적 빌드**: Hugo Extended 엔진을 통해 수백 개의 고해상도 이미지와 비교 아티클을 수 초 내에 렌더링
   - **콘텐츠 검증 파이프라인**: 마크다운 메타데이터(Frontmatter), SEO 태그, 오픈그래프(OG) 규격 준수 여부 사전 검증
@@ -81,3 +82,24 @@ dahlia/
    - 빌드가 이루어지는 개발/생성 머신과 실제 대외망에 노출되는 서빙 머신(Nginx)을 분리하여 서빙 머신에는 정적 HTML/CSS 파일만 남기고 일체의 비즈니스 로직이나 DB 접근을 배제
 3. **콘텐츠 무결성 원장(Ledger System)**:
    - 콘텐츠 배포 시 고유 해시값을 SQLite 원장에 기록하여 배포 중복이나 이력 유실 문제를 시스템적으로 방지
+
+---
+
+## 6. 빠른 시작 (Quickstart)
+
+```bash
+# 저장소 복제
+git clone https://github.com/minhyuk27/dahlia.git
+cd dahlia/site
+
+# 로컬 개발 서버 실행 (Hugo 설치 필요)
+hugo server -D
+```
+
+---
+
+## 7. 면책 조항 및 라이선스 (Disclaimer & License)
+
+- **상표 및 이미지 면책**: 샘플 리뷰 아티클에 포함된 제품 상표, 브랜드 로고 및 하드웨어 이미지는 각 제조사의 지식재산권입니다.
+- **코드 라이선스**: 본 플랫폼 소스 코드는 [MIT License](LICENSE)를 따릅니다.
+
